@@ -55,7 +55,7 @@
 >
 >然后，通过update-alternatives命令用来维护系统命令的符号链接，可以将多个文件链接到同一个符号文件上，并进行管理。(简单来说就是可以设置多个版本的优先级来进行不同Python版本之间的切换)
 >
->![image-20220419120415061](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220419120415061.png)
+>![image-20220419120415061](./assets/image-20220419120415061.png)
 >
 >```python
 >#设置以后输入python就可以直接进入python3的环境中，具体是3.6还是3.8需要看你设置的python3.6和python3.8后边的数字，数字越大就代表优先级越高（这里设置的python3.6的优先级为2，python3.8的优先级为1）
@@ -67,7 +67,7 @@
 >
 >具体配置参数含义如下图：
 >
->![image-20220419115855136](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220419115855136.png)
+>![image-20220419115855136](./assets/image-20220419115855136.png)
 >
 >```python
 >#设置完成之后，可以通过命令查看设置的优先级
@@ -76,23 +76,23 @@
 >
 >具体如图：
 >
->![image-20220419120454092](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220419120454092.png)
+>![image-20220419120454092](./assets/image-20220419120454092.png)
 >
 >测试-->
 >
 >在终端输入python，正常启动python环境，为3.6版本，在==sudo update-alternatives --config python==命令后可以选择具体的环境，选择2就如上图所示，选择了3.8的环境，如图：
 >
->![image-20220419144501277](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220419144501277.png)
+>![image-20220419144501277](./assets/image-20220419144501277.png)
 >
 >>**注：**可能会遇到的问题，切换到3.8环境后，使用==python3 -m venv yourvenvname==发现报错了，按照报错原因执行==sudo apt-get install python3-venv==仍然无法解决，而且在base环境也无法pip list ,最终查阅查考文章解决。(如果没有遇到问题可跳过)
 >
 >>python3 -m venv yourvenvname报错
 >
->>![image-20220419145451286](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220419145451286.png)
+>>![image-20220419145451286](./assets/image-20220419145451286.png)
 >
 >>解决过程：
 >
->>![image-20220419150306064](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220419150306064.png)
+>>![image-20220419150306064](./assets/image-20220419150306064.png)
 >
 >>```python
 >>#解决python -m venv创建虚拟环境报错
@@ -100,15 +100,15 @@
 >>sudo apt-get install python3.8-venv
 >>```
 >
->>![img](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\20201014094940492.png#pic_center)
+>>![20201014094940492](./assets/20201014094940492.png)
 >
 >>pip list报错，参考[3]的前几种方法依然无法pip list,最终选择了强制重新安装pip，成功解决
 >
->>![image-20220419145131248](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220419145131248.png)
+>>![image-20220419145131248](./assets/image-20220419145131248.png)
 >
 >>解决过程：
 >
->>![image-20220419150211379](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220419150211379.png)
+>>![image-20220419150211379](./assets/image-20220419150211379.png)
 >
 >>```python
 >>#解决安装多版本python后pip list报错
@@ -119,9 +119,9 @@
 >
 >最终，成功安装多版本python并且可以创建python3.8的虚拟环境
 >
->![image-20220419150411901](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220419150411901.png)
+>![image-20220419150411901](./assets/image-20220419150411901.png)
 >
->![image-20220419150703354](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220419150703354.png)
+>![image-20220419150703354](./assets/image-20220419150703354.png)
 >
 >参考文章：
 >
@@ -171,7 +171,7 @@ python -m pip install --upgrade pip
 >
 >​	下载链接：[PyTorch for Jetson - version 1.10 now available - Jetson Nano - NVIDIA Developer Forums](https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-10-now-available/72048)
 >
->![image-20220415191454544](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220415191454544.png)
+>![image-20220415191454544](./assets/image-20220415191454544.png)
 >
 >.whl文件下载好之后，cd 命令进入下载的目录并执行：
 >
@@ -187,15 +187,15 @@ python -m pip install --upgrade pip
 >进入其官方GitHub：[GitHub - pytorch/vision: Datasets, Transforms and Models specific to Computer Vision](https://github.com/pytorch/vision/tree/master)
 >找到自己需要的版本下载下来，torch和torchvision的版本需要相互对应，比如博主最终安装的是Pytorch1.6.0，所以torchvision版本选择0.7.0.
 >
->![image-20220415191920277](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220415191920277.png)
+>![image-20220415191920277](./assets/image-20220415191920277.png)
 >
 >下载torchvision压缩包文件查找步骤如下：
 >
->![image-20220415191042231](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220415191042231.png)
+>![image-20220415191042231](./assets/image-20220415191042231.png)
 >
->![image-20220415191339990](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220415191339990.png)
+>![image-20220415191339990](./assets/image-20220415191339990.png)
 >
->![image-20220415191329605](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220415191329605.png)
+>![image-20220415191329605](./assets/image-20220415191329605.png)
 >
 >下载好.zip压缩包之后，进入下载目录进行解压，同时进入terminal终端
 >
@@ -208,11 +208,11 @@ python -m pip install --upgrade pip
 >
 >正常执行sudo python3 setup.py install的过程图：
 >
->![image-20220419121300956](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220419121300956.png)
+>![image-20220419121300956](./assets/image-20220419121300956.png)
 >
 >5、安装torchvision--在setup.py install的时候会有一些报错，根据报错原因(一般就是缺少一些依赖包如pillow之类的，也可能是其他，我的是pillow)，直接执行安装缺少包的命令
 >
->![image-20220419120934250](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220419120934250.png)
+>![image-20220419120934250](./assets/image-20220419120934250.png)
 >
 >有可能出现的错误，参考网址：https://blog.csdn.net/JulyLH/article/details/123140461
 >
@@ -253,9 +253,9 @@ python -m pip install --upgrade pip
 
 >如果安装了上面的多版本python，在python3.8创建的虚拟环境中直接==pip install torch==和==pip install torchvision==即可,它会直接从下载源中找到对应jetpack版本和python版本的aarch64的torch,如图：
 >
->![image-20220419162233925](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220419162233925.png)
+>![image-20220419162233925](./assets/image-20220419162233925.png)
 >
->![image-20220419162307939](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220419162307939.png)
+>![image-20220419162307939](./assets/image-20220419162307939.png)
 
 ### **tensorflow环境搭建**
 
@@ -289,7 +289,7 @@ python -m pip install --upgrade pip
 >
 >**注1：**numpy的版本一定要根据自己的python版本进行安装(我的为python36安装以下版本)，一定要对应好版本，我踩的坑有一部分来自于版本（图为遇到的多次错误）
 >
->![image-20220419120813781](H:\zhuomian\AI Edge Computing\Paper--md\NX学习笔记.assets\image-20220419120813781.png)
+>![image-20220419120813781](./assets/image-20220419120813781.png)
 >
 >**注2：**keras_applications1.0.8-这个包可能会在安装时找不到，官网已经镜像源都找不到，可以直接在python中文网https://www.cnpython.com/pypi/keras-applications/download下载好==.whl文件==直接安装（百度直接搜这个包就可以，在python中文网就有）
 >
